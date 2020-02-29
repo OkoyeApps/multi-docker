@@ -6,7 +6,7 @@ before_install:
   - docker build -t okoyeapps/react-test -f ./client/Dockerfile.dev  ./client
 
 script:
-  - docker run okoyeapps/react-test npm test -- --coverage watchAll=false
+  - docker run okoyeapps/react-test npm test -- --coverage --watchAll=false
 
 after_success:
   - docker build -t okoyeapps/multi-client  ./client
